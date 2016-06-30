@@ -24,15 +24,11 @@ def print_header
 end
 
 def print(students)
-    puts "Enter the starting letter of students you wish to display:"
-    puts "Hit enter twice to display all students"
-    letter = gets.chomp
-
+    puts "Printing all students with a name shorter than 12 characters"
     students.each_with_index do |student, index|
-        if student[:name][0].downcase == letter.downcase
+        #will only print if the students name is shorter than 12 characters
+        if student[:name].length < 12
             puts "#{student[:name]} (#{student[:cohort]} cohort)"
-        elsif letter == ""
-            puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
         end
     end
 end
